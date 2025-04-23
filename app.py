@@ -8,7 +8,7 @@ st.title("🔹 Insert Dashed Line After N Rows")
 raw_data = st.text_area("📋 Paste your data here (each item in a new line):", height=300)
 
 # Input: Split interval
-interval = st.selectbox("🔁 Insert dashed line after every N rows:", [3, 4, 5, 6, 8, 15], index=1)
+interval = st.selectbox("🔁 Insert dashed line after every N rows:", [1 ,2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], index=1)
 
 # Split the text and process
 if st.button("🚀 Extract Data with Dashes"):

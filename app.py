@@ -2,7 +2,8 @@ import streamlit as st
 
 st.set_page_config(page_title="Dash Line Inserter and Space Remover", layout="centered")
 
-st.title("🔹 Dash Line Inserter and Space Remover")
+# Use Markdown to reduce the title size
+st.markdown("<h3 style='text-align:center;'>🔹 Dash Line Inserter and Space Remover</h3>", unsafe_allow_html=True)
 
 # Input: Raw text data
 raw_data = st.text_area("📋 Paste your data here (each item in a new line):", height=300)
@@ -49,4 +50,4 @@ if st.button("🚀 Extract Data with Dashes"):
         data=final_text,
         file_name="dashed_output.txt",
         mime="text/plain"
-    )
+    )  

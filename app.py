@@ -17,8 +17,8 @@ if "cleaned_data" not in st.session_state:
 
 # Button to clear spaces from the data
 if st.button("🧹 Clear Spaces"):
-    # Clean the data (removing excessive spaces)
-    cleaned_data = " ".join(raw_data.split())
+    # Remove empty lines and strip leading/trailing spaces from each line
+    cleaned_data = "\n".join([line.strip() for line in raw_data.splitlines() if line.strip()])
 
     # Store the cleaned data in session state to persist the change
     st.session_state.cleaned_data = cleaned_data

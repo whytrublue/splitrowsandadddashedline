@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.set_page_config(page_title="Dash Line Inserter", layout="centered")
+st.set_page_config(page_title="Dash Line Inserter and Space Remover", layout="centered")
 
 st.title("🔹 Insert Dashed Line After N Rows")
 

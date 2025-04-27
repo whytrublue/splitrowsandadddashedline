@@ -14,10 +14,10 @@ interval = st.selectbox("🔁 To split text after every ___ lines, choose from t
 # Button to clear spaces from the data
 if st.button("🧹 Clear Spaces"):
     # Remove extra spaces (leading/trailing and between lines)
-    raw_data = " ".join(raw_data.split())
-    
-    # Update the text area with the cleaned data
-    st.text_area("📋 Pasted Data (Spaces Cleared)", value=raw_data, height=300)
+    cleaned_data = " ".join(raw_data.split())
+
+    # Replace the old data with the cleaned data inside the same text area
+    raw_data = st.text_area("📋 Paste your data here (each item in a new line):", value=cleaned_data, height=300)
 
     st.success("✅ Spaces cleared successfully!")
 

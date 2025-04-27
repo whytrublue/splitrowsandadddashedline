@@ -11,19 +11,26 @@ raw_data = st.text_area("📋 Paste your data here (each item in a new line):", 
 interval = st.selectbox("🔁 To split text after every ___ lines, choose from the dropdown and Click On Extract Data:", 
                         [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], index=1)
 
+# Create a placeholder for cleaning the data
+if "cleaned_data" not in st.session_state:
+    st.session_state.cleaned_data = raw_data
+
 # Button to clear spaces from the data
 if st.button("🧹 Clear Spaces"):
-    # Remove extra spaces (leading/trailing and between lines)
+    # Clean the data (removing excessive spaces)
     cleaned_data = " ".join(raw_data.split())
 
-    # Replace the old data with the cleaned data inside the same text area
-    raw_data = st.text_area("📋 Paste your data here (each item in a new line):", value=cleaned_data, height=300)
+    # Store the cleaned data in session state to persist the change
+    st.session_state.cleaned_data = cleaned_data
 
     st.success("✅ Spaces cleared successfully!")
 
+# Use cleaned data if it exists, otherwise fall back to the original raw_data
+data_to_process = st.session_state.cleaned_data if st.session_state.cleaned_data else raw_data
+
 # Split the text and process when the "Extract Data with Dashes" button is clicked
 if st.button("🚀 Extract Data with Dashes"):
-    lines = raw_data.strip().splitlines()
+    lines = data_to_process.strip().splitlines()
     output = []
 
     for i, line in enumerate(lines, 1):

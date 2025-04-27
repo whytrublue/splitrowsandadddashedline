@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config(page_title="Dash Line Inserter and Space Remover", layout="centered")
 
-st.title("🔹 Insert Dashed Line After N Rows")
+st.title("🔹 Dash Line Inserter and Space Remover")
 
 # Input: Raw text data
 raw_data = st.text_area("📋 Paste your data here (each item in a new line):", height=300)

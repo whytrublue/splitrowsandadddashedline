@@ -44,4 +44,7 @@ if st.button("🚀 Extract Data with Dashes"):
     # Add download as .txt option
     st.download_button(
         label="⬇️ Download Output as TXT",
-        data=final_text_
+        data=final_text,
+        file_name="dashed_output.txt",
+        mime="text/plain"
+    )

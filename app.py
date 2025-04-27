@@ -15,9 +15,11 @@ interval = st.selectbox("🔁 To split text after every ___ lines, choose from t
 if st.button("🧹 Clear Spaces"):
     # Remove extra spaces (leading/trailing and between lines)
     raw_data = " ".join(raw_data.split())
+    
+    # Update the text area with the cleaned data
+    st.text_area("📋 Pasted Data (Spaces Cleared)", value=raw_data, height=300)
 
     st.success("✅ Spaces cleared successfully!")
-    st.text_area("📋 Pasted Data (Spaces Cleared)", value=raw_data, height=300)
 
 # Split the text and process when the "Extract Data with Dashes" button is clicked
 if st.button("🚀 Extract Data with Dashes"):

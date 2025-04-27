@@ -16,7 +16,8 @@ if "cleaned_data" not in st.session_state:
     st.session_state.cleaned_data = raw_data
 
 # Button to clear spaces from the data with the additional instruction
-st.write("❗ Double click the 'Clear Spaces' button every time a New Data is Pasted.")
+st.markdown("<p style='color:red;'>❗ Double click on 'Clear Spaces' every time a New Data is added.</p>", unsafe_allow_html=True)
+
 if st.button("🧹 Clear Spaces"):
     # Clean the raw_data and remove empty lines
     st.session_state.cleaned_data = "\n".join([line.strip() for line in raw_data.splitlines() if line.strip()])
